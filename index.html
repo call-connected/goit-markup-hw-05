@@ -474,7 +474,7 @@
         </div>
         <div class="subscribe-group">
           <p class="footer-subtitle">Subcscribe</p>
-          <div class="subscribe-field">
+          <form class="subscribe-field">
             <input
               type="email"
               name="email-subscribe"
@@ -490,13 +490,13 @@
                 </svg>
               </button>
             </div>
-          </div>
+          </form>
         </div>
       </div>
     </footer>
     <!-- #endregion-footer -->
     <!-- #region-modal -->
-    <div class="modal-backdrop">
+    <div class="modal-backdrop is-open">
       <div class="modal">
         <button type="button" class="modal-close">
           <svg class="modal-close-icon" width="8" height="8">
@@ -559,15 +559,25 @@
             ></textarea>
           </div>
           <div class="checkbox-accept">
-            <input type="checkbox" name="checkbox" id="PP" />
-            <p class="accept-text-modal">
-              I accept the terms and conditions of the
-              <a
-                class="link-accept-modal"
-                href="https://policies.google.com/privacy?hl=en-US"
-                >Privacy Policy</a
-              >
-            </p>
+            <input
+              type="checkbox"
+              name="checkbox"
+              id="PP"
+              class="modal-check visually-hidden"
+              value="on"
+            />
+            <label for="PP" class="accept-text-modal">
+              <span class="check-element">
+                <svg class="checkbox-bg" width="16" height="16">
+                  <use href="./images/icons.svg#icon-Checkbox"></use>
+                </svg>
+                <svg class="checkbox-tick" width="10" height="8">
+                  <use href="./images/icons.svg#icon-Vector"></use>
+                </svg>
+              </span>
+              I accept the terms and conditions of
+              <a class="link-accept-modal" href="">Privacy Policy</a>
+            </label>
           </div>
 
           <button type="submit" class="modal-btn-send">Send</button>

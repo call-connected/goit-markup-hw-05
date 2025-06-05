@@ -514,6 +514,9 @@ img {
   display: flex;
   justify-content: center;
   align-items: center;
+  opacity: 0;
+  pointer-events: 0;
+  visibility: hidden;
 }
 .modal {
   position: absolute;
@@ -524,6 +527,11 @@ img {
   width: 408px;
   min-height: 584px;
   padding: 24px;
+}
+.is-open {
+  opacity: 1;
+  pointer-events: auto;
+  visibility: visible;
 }
 .modal-close {
   background-color: #e7e9fc;
@@ -628,10 +636,43 @@ img {
 }
 
 .checkbox-accept {
-  display: flex;
+  display: inline-block;
   gap: 8px;
   align-items: center;
   justify-content: center;
+  align-self: center;
+}
+
+.check-element {
+  border-radius: 2px;
+  border: 1px solid rgba(46, 47, 66, 0.4);
+  margin-right: 8px;
+  fill: transparent;
+  display: inline-block;
+  position: relative;
+  width: 16px;
+  height: 16px;
+}
+.checkbox-bg {
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+.checkbox-tick {
+  position: absolute;
+  top: 0;
+  left: 4px;
+  transform: translateY(50%);
+}
+.modal-check:checked + .accept-text-modal .check-element .checkbox-bg {
+  border-color: #4d5ae5;
+  fill: #4d5ae5;
+}
+.modal-check:checked + .accept-text-modal .check-element {
+  border: none;
+}
+.modal-check:checked + .accept-text-modal .check-element .checkbox-tick {
+  fill: #fff;
 }
 .accept-text-modal {
   font-weight: 400;
@@ -639,6 +680,10 @@ img {
   line-height: 1.16667;
   letter-spacing: 0.04em;
   color: #8e8f99;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding-top: 5px;
 }
 .link-accept-modal {
   line-height: 1.33333;
